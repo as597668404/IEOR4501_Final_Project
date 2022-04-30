@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS DailyWeather
 
 CREATE TABLE IF NOT EXISTS TaxiRides
 (
-    id INTEGER PRIMARY KEY,
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
     pickup_datetime DATETIME,
     dropoff_datetime DATETIME,
     passenger_count INTEGER,
