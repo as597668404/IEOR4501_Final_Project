@@ -2,67 +2,92 @@
 CREATE TABLE IF NOT EXISTS HourlyWeather
 (
     HourlyWeather_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    DATE DATE,
-    TIME TIME,
-    DayofWeek TEXT,
+    DateTime DATETIME,
+    Date DATE,
+    Time TIME,
+    DayofWeek INTEGER,
     REPORT_TYPE TEXT,
-    HourlyDewPointTemperature INTEGER,
-    HourlyDryBulbTemperature INTEGER,
+    HourlyDewPointTemperature REAL,
+    HourlyDryBulbTemperature REAL,
     HourlyPrecipitation REAL,
-    HourlyWindGustSpeed INTEGER,
-    HourlyWindSpeed INTEGER,
+    HourlyWindGustSpeed REAL,
+    HourlyWindSpeed REAL,
     Sunrise INTEGER,
     Sunset INTEGER,
-    SustainedWindSpeed INTEGER
-)
+    Year INTEGER,
+    Month INTEGER,
+    Day INTEGER,
+    Hour INTEGER,
+    SustainedWindSpeed REAL
+);
 
 CREATE TABLE IF NOT EXISTS DailyWeather
 (
     DailyWeather_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    DATE DATE,
-    DayofWeek TEXT,
+    DateTime DATETIME,
+    Date DATE,
     REPORT_TYPE TEXT,
+    DayofWeek INTEGER,
     Sunrise INTEGER,
     Sunset INTEGER,
-    DailyAverageDewPointTemperature INTEGER,
-    DailyAverageDryBulbTemperature INTEGER,
+    DailyAverageDewPointTemperature REAL,
+    DailyAverageDryBulbTemperature REAL,
     DailyAverageWindSpeed REAL,
-    DailyMaximumDryBulbTemperature INTEGER,
-    DailyMinimumDryBulbTemperature INTEGER,
-    DailyPeakWindDirection INTEGER,
-    DailyPeakWindSpeed INTEGER,
+    DailyMaximumDryBulbTemperature REAL,
+    DailyMinimumDryBulbTemperature REAL,
+    DailyPeakWindDirection REAL,
+    DailyPeakWindSpeed REAL,
     DailyPrecipitation REAL,
-    SustainedWindSpeed INTEGER
-)
+    SustainedWindSpeed REAL,
+    Year INTEGER,
+    Month INTEGER,
+    Day INTEGER
+);
 
 CREATE TABLE IF NOT EXISTS TaxiRides
 (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    pickup_datetime DATETIME,
-    dropoff_datetime DATETIME,
-    passenger_count INTEGER,
-    trip_distance REAL,
-    pickup_longitude REAL,
-    pickup_latitude REAL,
-    dropoff_longitude REAL,
-    dropoff_latitude REAL,
-    fare_amount REAL,
-    extra REAL,
-    tip_amount REAL,
-    tolls_amount REAL,
-    total_amount REAL
-
+    Pickup_DateTime DATETIME,
+    Pickup_Date DATE,
+    Pickup_Time TIME,
+    Dropoff_DateTime DATETIME,
+    Dropoff_Date DATE,
+    Dropoff_Time TIME,
+    DayofWeek INTEGER,
+    Passenger_Count INTEGER,
+    Trip_Distance_Fake REAL,
+    Pickup_Longitude REAL,
+    Pickup_Latitude REAL,
+    Dropoff_Longitude REAL,
+    Dropoff_Latitude REAL,
+    Fare_Amount REAL,
+    Extra REAL,
+    Tip_Amount REAL,
+    Tolls_Amount REAL,
+    Total_Amount REAL,
+    Year INTEGER,
+    Month INTEGER,
+    Day INTEGER,
+    Hour INTEGER,
+    Distance REAL
+);
 
 CREATE TABLE IF NOT EXISTS UberRides
 (
     UberRides_ID INTEGER PRIMARY KEY AUTOINCREMENT,
+    Fare_Amount REAL,
+    Pickup_DateTime DATETIME,
     Pickup_Date DATE,
     Pickup_Time TIME,
-    DayofWeek TEXT,
+    DayofWeek INTEGER,
     Pickup_Longitude REAL,
     Pickup_Latitude REAL,
     Dropoff_Longitude REAL,
     Dropoff_Latitude REAL,
     Passenger_Count INTEGER,
+    Year INTEGER,
+    Month INTEGER,
+    Day INTEGER,
+    Hour INTEGER,
     Distance REAL
-)
+);
