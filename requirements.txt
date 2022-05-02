@@ -1,0 +1,14 @@
+Packages that were utilized during the project:
+math
+bs4
+matplotlib.pyplot
+pandas
+sqlalchemy
+sqlite3
+numpy
+requests
+re
+ssl
+range
+pandasql
+sqldf
