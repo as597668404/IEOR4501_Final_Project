@@ -12,3 +12,5 @@ ssl
 range
 pandasql
 sqldf
+keplergl
+KeplerGl
